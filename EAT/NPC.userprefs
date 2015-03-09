@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Shopkeeper/FSM.cs">
+    <Files>
+      <File FileName="Assets/Shopkeeper/FSM.cs" Line="19" Column="31" />
+      <File FileName="Assets/Controller/Movement.cs" Line="16" Column="27" />
+      <File FileName="../../../CMPT 370/L4/Lab4/Assets/FemaleController.cs" Line="17" Column="55" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
