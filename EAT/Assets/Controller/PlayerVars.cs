@@ -11,17 +11,17 @@ using UnityEngine;
 using System.Collections;
 
 public class PlayerVars : MonoBehaviour {
-	public const int MAX_ENERGY = 1000;
-	public const float ENERGY_DEC_TIME = 0.1f; // time interval in seconds between energy decrements
-	public const int ENERGY_DEC = 1; // amount by which energy is decremented
-	private static float energyTime; // real time since startup at which "energy" was last decremented
-	public static int energy; // referred to as "hunger" in group discussions
+	public const float MAX_HUNGER = 1000;
+	public const float HUNGER_DEC_TIME = 0.1f; // time interval in seconds between energy decrements
+	public const int HUNGER_DEC = 1; // amount by which energy is decremented
+	private static float hungerTime; // real time since startup at which "energy" was last decremented
+	public static float hunger; // referred to as "hunger" in group discussions
 						// decrements over time
 	
 	// Use this for initialization
 	void Start () {
-		energyTime = Time.realtimeSinceStartup;
-		energy = MAX_ENERGY;
+		hungerTime = Time.realtimeSinceStartup;
+		hunger = MAX_HUNGER * 0.5f;
 	}
 
 	// Update is called once per frame
@@ -29,12 +29,12 @@ public class PlayerVars : MonoBehaviour {
 		float newEnergyTime = Time.realtimeSinceStartup;
 		/*	if the real time since the last decrement is at or above
 			the ENERGY_DEC_TIME interval, decrement energy by ENERGY_DEC*/
-		if(newEnergyTime - energyTime >= ENERGY_DEC_TIME){
-			energyTime = newEnergyTime;
-			if(energy > 0){
-				energy -= ENERGY_DEC;
+		if(newEnergyTime - hungerTime >= HUNGER_DEC_TIME){
+			hungerTime = newEnergyTime;
+			if(hunger > 0){
+				hunger -= HUNGER_DEC;
 			}
-			Debug.Log(energy);
+			Debug.Log(hunger);
 		}
 	}
 }
