@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Pathfinding;
+using System.Collections.Generic;
 
 public class TheFuzz : MonoBehaviour {
 
@@ -9,8 +10,11 @@ public class TheFuzz : MonoBehaviour {
 	float nextDirectionTime = 0.0f;
 	float wanderingPeriod = 5.0f;
 	float wanderSpeed = 1.50f;
+	public static float hungerPenalty;
 
-	public static State state = State.CHASING;
+	public List <GameObject> vices = new List<GameObject>();
+
+	public static State state = State.WANDERING;
 
 	//PATHFINDING
 	float chasingSpeed = 3.0f;
@@ -43,10 +47,11 @@ public class TheFuzz : MonoBehaviour {
 				transform.LookAt(target);
 
 				transform.Translate(Vector3.forward * Time.deltaTime * chasingSpeed);
-					
+
 				//The Fuzz Catches You
 				if (Vector3.Distance (transform.position, target) < 2f) {
 					Debug.Log ("TAG");
+					PlayerVars.hunger -= hungerPenalty;
 					state = State.WANDERING;
 					break;
 				}
@@ -64,14 +69,39 @@ public class TheFuzz : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider other) {
 
-		Debug.Log (other.name);
-
 		switch (state) {
 			case State.WANDERING:
-				Debug.Log ("Fuzzy says Ouch");
-				//IF FUZZY RUNS INTO SOMETHING
-			transform.Rotate( 0,180,0);
+				//IF FUZZY RUNS INTO SOMETHING, Turn around
+				transform.Rotate( 0,180,0);
 				break;
 		}
+	}
+
+	void OnTriggerStay(Collider other) {
+
+		if (other.gameObject.name != "FPC") {
+			//return;
+		}
+
+		switch (state) {
+		case State.CHASING:
+			//IF FUZZY Finds a vice
+			if (vices.Count != 0) {
+				foreach (GameObject vice in vices) {
+					if (other.gameObject.name == vice.name) {
+						Debug.Log ("My Favourite!");
+						Destroy(other.gameObject);
+						
+						//LOSE INTEREST in Player
+						state = State.WANDERING;
+					}
+				}
+			}
+			break;
+		}
+
+		
+
+		
 	}
 }

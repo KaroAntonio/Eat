@@ -22,13 +22,15 @@ public class Food : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//SPIN
-		transform.Rotate (transform.forward * 85f * Time.deltaTime);
-		transform.Rotate (transform.right * 85f * Time.deltaTime);
-		transform.Rotate (transform.up * 85f * Time.deltaTime);
+		//transform.Rotate (transform.forward * 85f * Time.deltaTime);
+		//transform.Rotate (transform.right * 85f * Time.deltaTime);
+		//transform.Rotate (transform.up * 85f * Time.deltaTime);
 	}
 
 	void OnTriggerStay(Collider other) {
 
+		if (other.name != "FPC")
+						return;
 		//ILLUMINATE Food
 		halo.GetType().GetProperty("enabled").SetValue(halo, true, null);
 
@@ -38,39 +40,43 @@ public class Food : MonoBehaviour {
 
 				//EAT
 				Destroy(gameObject);
+				PlayerVars.hunger += foodValue;
 
 				//CHECK if you got caught 
-				float angle = Vector3.Angle(shepherd.transform.forward, transform.position - shepherd.transform.position);
-				if (angle < 90f) {
-					
-					RaycastHit hit = new RaycastHit();
-					float distance = Vector3.Distance(transform.position,fs.head.position);
-					Vector3 direction = (transform.position - fs.head.position);
+				if (shepherd.name != "BlindShepherd") {
 
-					Debug.DrawRay(fs.head.position, direction, Color.magenta);
-
-					if (Physics.Raycast(fs.head.transform.position , direction ,out hit, distance)) {
-						Debug.Log (hit.collider.ToString());
-						if (hit.collider.transform.position == transform.position) {
-							Debug.Log ("CAUGHT!");
-							
-							//DO THIS BETTER
-							TheFuzz.state = TheFuzz.State.CHASING;
+					float angle = Vector3.Angle(shepherd.transform.forward, transform.position - shepherd.transform.position);
+					if (angle < 90f) {
 						
+						RaycastHit hit = new RaycastHit();
+						float distance = Vector3.Distance(transform.position,fs.head.position);
+						Vector3 direction = (transform.position - fs.head.position);
+
+						Debug.DrawRay(fs.head.position, direction, Color.magenta);
+
+						if (Physics.Raycast(fs.head.transform.position , direction ,out hit, distance)) {
+							Debug.Log (hit.collider.ToString());
+
+							//CAUGHT: Fuzzy tries to hit you for the value of the food stolen
+						if ((hit.collider.transform.position == transform.position) || (hit.collider.gameObject.name == "FPC")) {
+								Debug.Log ("CAUGHT!");
+								
+								TheFuzz.state = TheFuzz.State.CHASING;
+								TheFuzz.hungerPenalty = foodValue;
+							
+							} else {
+								Debug.Log ("OBSCURED");
+							}
+							
 						} else {
-							Debug.Log ("OBSCURED");
+							Debug.Log ("VISIBLE");
 						}
 						
+						Debug.Log ("I SEEE YOU");
 					} else {
-						Debug.Log ("VISIBLE");
-					}
-					
-
-
-					Debug.Log ("I SEEE YOU");
-				} else {
-					Debug.Log ("I AM BLISSFULLY UNAWARE");
-				}	
+						Debug.Log ("I AM BLISSFULLY UNAWARE");
+					}	
+				}
 		}
 	}
 
