@@ -24,4 +24,4 @@ All Food is guarded by a shepherd, if the food is free, it is guarded by the bli
 The Fuzz (Ghost Fuzzies)
 Policing Units that maintain rationality and sanity in an otherwise entropic universe. The Fuzz will chase and punish the player for stealing food from food shepherds. The Fuzz are (currently) ghosts which means they dont have to worry about passing through things to chase the player.
 
-Vices: 
+Vices: If the fuzz is led to a vice while chasing the player, he'll eat it up and call off the hunt. Essentially a bribe.
