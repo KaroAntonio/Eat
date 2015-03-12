@@ -1,0 +1,27 @@
+A Design Document 
+
+Level Design for The Leopard Box
+
+Food is initially easy to come by, giving the player a hook.
+Resources should be scarce with intermitent times of surplus. 
+
+Food Shepherds
+Their primary functions are to guard food and to trade items.
+They can guard multiple food items, as each food object designates its guardian, not vice versa. As in, the food chooses its shepherd. 
+
+Vices: A shepherds vice is an item type which it desires, bringing shepherds their vices will result positively for the player.
+Rewards: Shepherds may give/spawn rewards either when an action is performed or when they are given their vices
+Special Rewards: Shepherds may grant special rewards when they receive n number of vices. Special rewards may came at increasing intervals as time goes on. 
+Phobias: shepherds are afraid of their phobias and dislike them, giving a shepherd something that they are afraid of will play out negatively for the player or the shepherd. 
+
+Distraction: Food Shepherds will always face their distraction, if they have one.
+
+Food Shepherds can See when their food has been stolen when it is in front of them, within a 70 degree cone of vision and when nothing is obstructing their view of the food. A raytrace is used from the shepherd's head to the center of the food.
+
+Food
+All Food is guarded by a shepherd, if the food is free, it is guarded by the blind shepherd, a game object that won't penalize the player for stealing his food. The Blindshepherd is a kindly soul.
+
+The Fuzz (Ghost Fuzzies)
+Policing Units that maintain rationality and sanity in an otherwise entropic universe. The Fuzz will chase and punish the player for stealing food from food shepherds. The Fuzz are (currently) ghosts which means they dont have to worry about passing through things to chase the player.
+
+Vices: 

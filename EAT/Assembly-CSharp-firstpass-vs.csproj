@@ -46,27 +46,120 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\AI\AIPath.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\AI\NavmeshController.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\AI\Seeker.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\AstarData.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\AstarMath.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\AstarPath.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\GraphUpdateScene.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\GraphUpdateShape.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\Misc\AnimationLink.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\Misc\AstarDebugger.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\Misc\AstarEnumFlagAttr.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\Misc\BinaryHeap.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\Misc\GraphEditorBase.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\Misc\GraphModifier.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\Misc\Int3.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\Misc\ListPool.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\Misc\NodeLink.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\Misc\NodeLink2.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\Misc\NodeLink3.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\Misc\ObjectPool.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\Misc\PathPool.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\Misc\StackPool.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\Misc\ThreadControlQueue.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\Misc\WindowsStoreCompatibility.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\Nodes\GraphNode.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\Path.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\PathHandler.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\Serialization\JsonConverters.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\Serialization\JsonSerializer.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\Serialization\SimpleJsonReplacement.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\Serialization\SimpleZipReplacement.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Core\astarclasses.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Editor\AnimationLinkEditor.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Editor\AstarPathEditor.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Editor\AstarUpdateWindow.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Editor\EditorGUIx.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Editor\EditorUtilities.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Editor\GraphEditors\GraphEditor.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Editor\GraphEditors\GridGeneratorEditor.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Editor\GraphEditors\NavMeshGeneratorEditor.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Editor\GraphEditors\PointGeneratorEditor.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Editor\GraphUpdateSceneEditor.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Editor\Misc\AstarEnumFlagDrawer.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Editor\ModifierEditors\RaycastModifierEditor.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Editor\ModifierEditors\SmoothModifierEditor.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Editor\SeekerEditor.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\ExampleScenes\Example12_Procedural\ProceduralGridMover.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\ExampleScenes\Example12_Procedural\ProceduralWorld.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\ExampleScenes\ExampleScripts\AIFollow.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\ExampleScenes\ExampleScripts\AstarSmoothFollow2.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\ExampleScenes\ExampleScripts\DoorController.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\ExampleScenes\ExampleScripts\DynamicGridObstacle.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\ExampleScenes\ExampleScripts\MineBotAI.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\ExampleScenes\ExampleScripts\ObjectPlacer.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\ExampleScenes\ExampleScripts\TargetMover.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Generators\Base.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Generators\GridGenerator.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Generators\NavMeshGenerator.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Generators\NodeClasses\GridNode.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Generators\NodeClasses\PointNode.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Generators\NodeClasses\TriangleMeshNode.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Generators\PointGenerator.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Generators\QuadtreeGraph.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Generators\Utilities\BBTree.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Generators\Utilities\EuclideanEmbedding.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Generators\Utilities\NavMeshRenderer.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Generators\Utilities\ObjImporter.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Modifiers\AlternativePath.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Modifiers\FunnelModifier.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Modifiers\Modifiers.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Modifiers\RaycastModifier.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Modifiers\SimpleSmoothModifier.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Modifiers\StartEndModifier.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Navmesh\RelevantGraphSurface.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Pathfinders\ABPath.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Utilities\AstarChecksum.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Utilities\AstarMemory.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Utilities\AstarParallel.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Utilities\AstarProfiler.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Utilities\DotNetReplacements.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Utilities\GraphUpdateUtilities.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Utilities\LockFreeStack.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Utilities\PathUtilities.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Utilities\ProfileHelper.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\Utilities\UnityReferenceHelper.cs" />
+     <Compile Include="Assets\Standard Assets\AstarPathfindingProject\changelog.cs" />
      <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
-     <None Include="Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh2.shader" />
-     <None Include="Assets\AstarPathfindingProject\Plugins\DotNetZip\License.txt" />
-     <None Include="Assets\AstarPathfindingProject\ExampleScenes\Materials\Projector Multiply.shader" />
-     <None Include="Assets\AstarPathfindingProject\ExampleScenes\Materials\DiffuseAlwaysVisible.shader" />
-     <None Include="Assets\AstarPathfindingProject\Plugins\dependencies.txt" />
-     <None Include="Assets\AstarPathfindingProject\ExampleScenes\_Example Scenes.txt" />
-     <None Include="Assets\AstarPathfindingProject\Readme_upgrading.txt" />
-     <None Include="Assets\AstarPathfindingProject\ExampleScenes\Materials\Projector Light.shader" />
-     <None Include="Assets\AstarPathfindingProject\Readme.txt" />
-     <None Include="Assets\AstarPathfindingProject\Plugins\JsonFx\License.txt" />
-     <None Include="Assets\AstarPathfindingProject\Plugins\JsonFx\Readme.txt" />
-     <None Include="Assets\AstarPathfindingProject\link.xml" />
+     <None Include="Assets\Standard Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh2.shader" />
+     <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
+     <None Include="Assets\Standard Assets\AstarPathfindingProject\Plugins\DotNetZip\License.txt" />
+     <None Include="Assets\Standard Assets\AstarPathfindingProject\ExampleScenes\Materials\Projector Multiply.shader" />
+     <None Include="Assets\Environment\Resources\CloudsToy Shaders\CloudRealistic.shader" />
+     <None Include="Assets\Standard Assets\AstarPathfindingProject\ExampleScenes\Materials\DiffuseAlwaysVisible.shader" />
+     <None Include="Assets\Standard Assets\AstarPathfindingProject\Plugins\dependencies.txt" />
+     <None Include="Assets\Standard Assets\AstarPathfindingProject\ExampleScenes\_Example Scenes.txt" />
+     <None Include="Assets\Environment\Resources\CloudsToy Shaders\CloudBright.shader" />
+     <None Include="Assets\Standard Assets\AstarPathfindingProject\Readme_upgrading.txt" />
+     <None Include="Assets\Standard Assets\AstarPathfindingProject\ExampleScenes\Materials\Projector Light.shader" />
+     <None Include="Assets\Environment\Volumetric Clouds\Instructions.txt" />
+     <None Include="Assets\Standard Assets\AstarPathfindingProject\Readme.txt" />
+     <None Include="Assets\Standard Assets\AstarPathfindingProject\Plugins\JsonFx\License.txt" />
+     <None Include="Assets\Standard Assets\AstarPathfindingProject\Plugins\JsonFx\Readme.txt" />
+     <None Include="Assets\Standard Assets\AstarPathfindingProject\link.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
+ <Reference Include="CloudsToy">
+ <HintPath>/Users/newuser/Documents/Karo/Learn/CMPT 330/Eat/EAT/Assets/Environment/Volumetric Clouds/DLL/CloudsToy.dll</HintPath>
+ </Reference>
  <Reference Include="Pathfinding.Ionic.Zip.Reduced">
- <HintPath>/Users/newuser/Documents/Karo/Learn/CMPT 330/Eat/EAT/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+ <HintPath>/Users/newuser/Documents/Karo/Learn/CMPT 330/Eat/EAT/Assets/Standard Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
  </Reference>
  <Reference Include="Pathfinding.JsonFx">
- <HintPath>/Users/newuser/Documents/Karo/Learn/CMPT 330/Eat/EAT/Assets/AstarPathfindingProject/Plugins/JsonFx/Pathfinding.JsonFx.dll</HintPath>
+ <HintPath>/Users/newuser/Documents/Karo/Learn/CMPT 330/Eat/EAT/Assets/Standard Assets/AstarPathfindingProject/Plugins/JsonFx/Pathfinding.JsonFx.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

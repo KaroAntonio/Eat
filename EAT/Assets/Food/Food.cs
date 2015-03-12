@@ -5,21 +5,21 @@ public class Food : MonoBehaviour {
 
 	FoodShepherd fs;
 	public GameObject shepherd;
-	public Transform head;
 	public float foodValue;
 	//BUFF
 	//DEBUFF
 
 	Component halo;
 
-	// Use this for initialization
 	void Start () {
+
 		fs = (FoodShepherd) shepherd.GetComponent(typeof(FoodShepherd)); 
 		halo = GetComponent("Halo");
+
+		//INITIALIZE Halo to OFF
 		halo.GetType().GetProperty("enabled").SetValue(halo, false, null);
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		//SPIN
 		//transform.Rotate (transform.forward * 85f * Time.deltaTime);
@@ -46,8 +46,10 @@ public class Food : MonoBehaviour {
 				if (shepherd.name != "BlindShepherd") {
 
 					float angle = Vector3.Angle(shepherd.transform.forward, transform.position - shepherd.transform.position);
-					if (angle < 90f) {
+					
+					if (angle < 70f) {
 						
+						fs.head = fs.transform.FindChild ("base/spine/spine_up/head");
 						RaycastHit hit = new RaycastHit();
 						float distance = Vector3.Distance(transform.position,fs.head.position);
 						Vector3 direction = (transform.position - fs.head.position);
@@ -61,8 +63,10 @@ public class Food : MonoBehaviour {
 						if ((hit.collider.transform.position == transform.position) || (hit.collider.gameObject.name == "FPC")) {
 								Debug.Log ("CAUGHT!");
 								
+								fs.displayStolenFoodText();
+								
 								TheFuzz.state = TheFuzz.State.CHASING;
-								TheFuzz.hungerPenalty = foodValue;
+								TheFuzz.hungerPenalty += foodValue;
 							
 							} else {
 								Debug.Log ("OBSCURED");
