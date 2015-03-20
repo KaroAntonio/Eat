@@ -27,7 +27,8 @@ public class Menu : MonoBehaviour {
 	void Start () {
 		menuCanvas = GameObject.Find("Menu");
 		menuCanvas.SetActive(false);
-		MenuPause ();
+		Time.timeScale = 1.0f;
+		MouseLook.activated = true;
 	}
 	
 	// Update is called once per frame
