@@ -23,7 +23,7 @@ public class PlayerVars : MonoBehaviour {
 	void Start () {
 		hungerTime = Time.time;
 		hunger = MAX_HUNGER * 0.5f;
-		allowDeath = false;
+		allowDeath = true;
 	}
 
 	// Update is called once per frame

@@ -1,8 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Player\GUI\PlayerUI.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Menu\DeathScreen.cs">
     <Files>
-      <File FileName="Assets\Player\GUI\PlayerUI.cs" Line="39" Column="68" />
+      <File FileName="Assets\Player\GUI\PlayerUI.cs" Line="26" Column="56" />
+      <File FileName="Assets\Player\PlayerVars.cs" Line="26" Column="20" />
+      <File FileName="Assets\Menu\DeathScreen.cs" Line="34" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
