@@ -35,7 +35,6 @@ public class Menu : MonoBehaviour {
 	void Update () {
 		if(Input.GetButtonDown("Cancel")){
 			MenuPause();
-
 		}
 	}
 }

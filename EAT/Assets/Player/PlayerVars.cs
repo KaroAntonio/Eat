@@ -34,6 +34,7 @@ public class PlayerVars : MonoBehaviour {
 			if(hunger > 0){
 				hunger -= HUNGER_DEC;
 			}
+			Debug.Log(hunger);
 		}
 	}
 }

@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/utils/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/utils/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -60,7 +60,6 @@
      <Compile Include="Assets\Non-Player\TheFuzz\TheFuzz.cs" />
      <Compile Include="Assets\Player rigidbody\Cam_controller.cs" />
      <Compile Include="Assets\Player rigidbody\Player_physics_controller.cs" />
-     <Compile Include="Assets\Player\GUI\FirstPersonUI.cs" />
      <Compile Include="Assets\Player\GUI\PlayerUI.cs" />
      <Compile Include="Assets\Player\Movement.cs" />
      <Compile Include="Assets\Player\PlayerVars.cs" />
@@ -88,19 +87,19 @@
      <None Include="Assets\Standard Assets\AstarPathfindingProject\Plugins\JsonFx\Readme.txt" />
      <None Include="Assets\Standard Assets\AstarPathfindingProject\link.xml" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/charlie/Downloads/cmpt 330 - realtime game/Eat with rigidbody player/EAT/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/utils/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="CloudsToy">
- <HintPath>C:/Users/charlie/Downloads/cmpt 330 - realtime game/Eat with rigidbody player/EAT/Assets/Environment/Volumetric Clouds/DLL/CloudsToy.dll</HintPath>
- </Reference>
- <Reference Include="Pathfinding.Ionic.Zip.Reduced">
- <HintPath>C:/Users/charlie/Downloads/cmpt 330 - realtime game/Eat with rigidbody player/EAT/Assets/Standard Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+ <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/Environment/Volumetric Clouds/DLL/CloudsToy.dll</HintPath>
  </Reference>
  <Reference Include="Pathfinding.JsonFx">
- <HintPath>C:/Users/charlie/Downloads/cmpt 330 - realtime game/Eat with rigidbody player/EAT/Assets/Standard Assets/AstarPathfindingProject/Plugins/JsonFx/Pathfinding.JsonFx.dll</HintPath>
+ <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/Standard Assets/AstarPathfindingProject/Plugins/JsonFx/Pathfinding.JsonFx.dll</HintPath>
+ </Reference>
+ <Reference Include="Pathfinding.Ionic.Zip.Reduced">
+ <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/Standard Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

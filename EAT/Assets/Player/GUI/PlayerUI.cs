@@ -23,8 +23,8 @@ public class PlayerUI : MonoBehaviour {
 		hungerFill = GameObject.Find("HungerFill").GetComponent<Image>();
 		hungerBar.rectTransform.sizeDelta = new Vector2(HUNGER_BAR_WIDTH, HUNGER_BAR_HEIGHT);
 		hungerFill.rectTransform.sizeDelta = new Vector2(HUNGER_BAR_WIDTH, HUNGER_FILL_HEIGHT);
-		hungerBar.transform.position = new Vector3(0,0,0);
-		hungerFill.transform.position = new Vector3(0,0,0);
+//		hungerBar.transform.position = new Vector3(0,0,0);
+//		hungerFill.transform.position = new Vector3(0,0,0);
 	}
 		
 	// Update is called once per frame
