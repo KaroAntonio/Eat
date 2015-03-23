@@ -11,8 +11,9 @@ using UnityEngine;
 using System.Collections;
 
 public class PlayerVars : MonoBehaviour {
+	public static bool allowDeath;
 	public const float MAX_HUNGER = 1000;
-	public const float HUNGER_DEC_TIME = 0.1f; // time interval in seconds between energy decrements
+	public const float HUNGER_DEC_TIME = 0.01f; // time interval in seconds between energy decrements
 	public const int HUNGER_DEC = 1; // amount by which energy is decremented
 	private static float hungerTime; // real time since startup at which "energy" was last decremented
 	public static float hunger; // referred to as "hunger" in group discussions
@@ -22,6 +23,7 @@ public class PlayerVars : MonoBehaviour {
 	void Start () {
 		hungerTime = Time.time;
 		hunger = MAX_HUNGER * 0.5f;
+		allowDeath = false;
 	}
 
 	// Update is called once per frame
@@ -33,9 +35,6 @@ public class PlayerVars : MonoBehaviour {
 			hungerTime = newHungerTime;
 			if(hunger > 0){
 				hunger -= HUNGER_DEC;
-			} else{
-			// death
-			
 			}
 //			Debug.Log(hunger);
 		}

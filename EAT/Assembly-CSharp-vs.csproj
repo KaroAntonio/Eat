@@ -53,6 +53,7 @@
      <Compile Include="Assets\Items\AntiMagnet\AntiMagnet.cs" />
      <Compile Include="Assets\Items\Item.cs" />
      <Compile Include="Assets\Items\Magnet\Magnet.cs" />
+     <Compile Include="Assets\Menu\DeathScreen.cs" />
      <Compile Include="Assets\Menu\MainMenu.cs" />
      <Compile Include="Assets\Menu\Menu.cs" />
      <Compile Include="Assets\Non-Player\FoodShepherd\FoodShepherd.cs" />
