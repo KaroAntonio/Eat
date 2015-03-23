@@ -33,8 +33,11 @@ public class PlayerVars : MonoBehaviour {
 			hungerTime = newHungerTime;
 			if(hunger > 0){
 				hunger -= HUNGER_DEC;
+			} else{
+			// death
+			
 			}
-			Debug.Log(hunger);
+//			Debug.Log(hunger);
 		}
 	}
 }

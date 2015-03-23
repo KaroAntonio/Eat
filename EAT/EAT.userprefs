@@ -1,8 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Player\GUI\PlayerUI.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\Graphics\Lab7\Assets\GrayScale.shader">
     <Files>
-      <File FileName="Assets\Player\GUI\PlayerUI.cs" Line="27" Column="3" />
+      <File FileName="..\..\..\Graphics\Lab7\Assets\GrayScale.shader" Line="13" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
