@@ -17,6 +17,11 @@ using System;
 
 public class Player_physics_controller : MonoBehaviour
 {
+		// Robert Smiley
+		// buff values
+		// values extracted from the current player buff
+		private float buffSpeed;
+
 		// physics values.
 		// Naming convention between velocity, accel, or force maybe wrong.
 		public float mouse_sensitivity = 1;
@@ -305,6 +310,18 @@ public class Player_physics_controller : MonoBehaviour
 		// used to cross the phyics frames to render frames.
 		void Update ()
 		{
+
+				// Robert Smiley
+				// Extract values from the current buff
+				// extract only if buff is not expired
+				if(Time.timeSinceLevelLoad - PlayerVars.buff.time < PlayerVars.buff.duration){
+					buffSpeed = PlayerVars.buff.speed;
+				} else{
+				// expired! set everything to zero!
+					buffSpeed = 0.0f;
+				}
+//				Debug.Log(buffSpeed);
+
 				// mouse look.
 				rotation_x = Input.GetAxis ("Mouse Y") * mouse_sensitivity;		// this does not affect collision.
 				rotation_y = Input.GetAxis ("Mouse X") * mouse_sensitivity;		// this case is special for applying physics.

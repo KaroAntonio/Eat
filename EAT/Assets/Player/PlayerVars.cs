@@ -18,12 +18,16 @@ public class PlayerVars : MonoBehaviour {
 	private static float hungerTime; // real time since startup at which "energy" was last decremented
 	public static float hunger; // referred to as "hunger" in group discussions
 						// decrements over time
+	public static Buff buff; // buff active on the player
 	
 	// Use this for initialization
 	void Start () {
 		hungerTime = Time.time;
 		hunger = MAX_HUNGER * 0.5f;
-		allowDeath = true;
+		allowDeath = false;
+		buff = new Buff();
+		buff.duration = 10.0f;
+		buff.speed = 10.0f;
 	}
 
 	// Update is called once per frame

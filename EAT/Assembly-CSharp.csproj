@@ -61,6 +61,7 @@
      <Compile Include="Assets\Non-Player\TheFuzz\TheFuzz.cs" />
      <Compile Include="Assets\Player rigidbody\Cam_controller.cs" />
      <Compile Include="Assets\Player rigidbody\Player_physics_controller.cs" />
+     <Compile Include="Assets\Player\Buff.cs" />
      <Compile Include="Assets\Player\GUI\PlayerUI.cs" />
      <Compile Include="Assets\Player\Movement.cs" />
      <Compile Include="Assets\Player\PlayerVars.cs" />
