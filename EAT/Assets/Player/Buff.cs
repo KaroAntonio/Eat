@@ -20,7 +20,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Buff : MonoBehaviour {
+public class Buff {
 	public float time;
 	public float duration;
 	public float speed;

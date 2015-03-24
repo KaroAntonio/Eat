@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Player rigidbody\Player_physics_controller.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Player\Buff.cs">
     <Files>
-      <File FileName="Assets\Player\Buff.cs" Line="18" Column="49" />
+      <File FileName="Assets\Food\Food.cs" Line="17" Column="31" />
+      <File FileName="Assets\Player\Buff.cs" Line="23" Column="18" />
       <File FileName="Assets\Player\PlayerVars.cs" Line="27" Column="21" />
       <File FileName="Assets\Player rigidbody\Player_physics_controller.cs" Line="323" Column="3" />
     </Files>
