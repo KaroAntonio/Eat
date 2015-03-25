@@ -20,20 +20,15 @@
 using UnityEngine;
 using System.Collections;
 
-public class Buff {
+public class Buff : MonoBehaviour{
 	public float time;
 	public float duration;
 	public float speed;
 
-	public Buff(){
-		time = Time.timeSinceLevelLoad;
-		duration = 0.0f;
-		speed = 0.0f;
-	}
-
-	public Buff(float d){
-		time = Time.timeSinceLevelLoad;
-		duration = d;
+	public void Apply(){
+//		Debug.Log("Apply Buff!");
+		this.time = Time.timeSinceLevelLoad;
+		PlayerVars.buff = this;
 	}
 
 	// Use this for initialization

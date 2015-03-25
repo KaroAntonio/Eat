@@ -251,7 +251,9 @@ public class Player_physics_controller : MonoBehaviour
 
 
 				// Combine the forward control values and limiter.
-				Vector3 a_sum = (transform.forward * base_forward_a + transform.right * base_strafe_a) * v_boost * xz_a_limiter;
+				// Robert Smiley
+				// Include buff values
+				Vector3 a_sum = (transform.forward * (base_forward_a + buffSpeed) + transform.right * base_strafe_a) * v_boost * xz_a_limiter;
 
 				// when in air or high slope, then very little drive power.
 				if (!onGround || Vector3.Dot (footTracePoint.up, ave_slope.normalized) < SLOPE_SLIP_ANGLE) {

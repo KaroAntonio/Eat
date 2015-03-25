@@ -6,10 +6,10 @@ public class Food : MonoBehaviour {
 	FoodShepherd fs;
 	public GameObject shepherd;
 	public float foodValue;
-	//BUFF
-	//DEBUFF
-
 	Component halo;
+	// Robert Smiley
+	// buff attached to this food object
+	private Buff buff;
 
 	void Start () {
 
@@ -18,6 +18,10 @@ public class Food : MonoBehaviour {
 
 		//INITIALIZE Halo to OFF
 		halo.GetType().GetProperty("enabled").SetValue(halo, false, null);
+
+		// Robert Smiley
+		// get a buff attached to this object, if there is one.
+		buff = GetComponent<Buff>();
 	}
 
 	void Update () {
@@ -37,6 +41,12 @@ public class Food : MonoBehaviour {
 		//GRAB FOOD
 		if (Input.GetMouseButtonDown (0)) {
 				Debug.Log ("EATEN");
+
+				// Robert Smiley
+				// apply buff
+				if(buff != null){
+					buff.Apply();
+				}
 
 				//EAT
 				Destroy(gameObject);

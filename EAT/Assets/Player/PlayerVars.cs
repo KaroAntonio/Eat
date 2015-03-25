@@ -25,9 +25,7 @@ public class PlayerVars : MonoBehaviour {
 		hungerTime = Time.time;
 		hunger = MAX_HUNGER * 0.5f;
 		allowDeath = false;
-		buff = new Buff();
-		buff.duration = 10.0f;
-		buff.speed = 10.0f;
+		buff = GetComponent<Buff>();
 	}
 
 	// Update is called once per frame
