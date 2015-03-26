@@ -9,6 +9,7 @@
 
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerVars : MonoBehaviour {
 	public static bool allowDeath;
@@ -18,18 +19,24 @@ public class PlayerVars : MonoBehaviour {
 	private static float hungerTime; // real time since startup at which "energy" was last decremented
 	public static float hunger; // referred to as "hunger" in group discussions
 						// decrements over time
-	public static Buff buff; // buff active on the player
+
+	// buff variables
+	public static float buffSpeed;
+
+	// buffs themselves
+	static public List<Buff> buffs;
 	
 	// Use this for initialization
 	void Start () {
 		hungerTime = Time.time;
 		hunger = MAX_HUNGER * 0.5f;
 		allowDeath = false;
-		buff = GetComponent<Buff>();
+		buffs = new List<Buff>();
 	}
 
 	// Update is called once per frame
 	void Update () {
+		Debug.Log(buffSpeed);
 		float newHungerTime = Time.time;
 		/*	if the real time since the last decrement is at or above
 			the ENERGY_DEC_TIME interval, decrement energy by ENERGY_DEC*/
@@ -40,5 +47,20 @@ public class PlayerVars : MonoBehaviour {
 			}
 //			Debug.Log(hunger);
 		}
+
+		// iterate the linked list of buffs, and aggregate overall buff values
+		// also removing expired buffs
+		float calcBuffSpeed = 0.0f; // temporary variable to store calculations
+		int i = 0; // index value
+		while(i < buffs.Count){ // make sure we are in Count range
+			while((Time.timeSinceLevelLoad - buffs[i].time) > buffs[i].duration){
+				buffs.RemoveAt(i);
+				continue; // go back to top of loop
+			}
+			calcBuffSpeed += buffs[i].speed;
+			i++;
+		}
+		// set calculated values to be public
+		buffSpeed = calcBuffSpeed;
 	}
 }

@@ -28,7 +28,7 @@ public class Buff : MonoBehaviour{
 	public void Apply(){
 //		Debug.Log("Apply Buff!");
 		this.time = Time.timeSinceLevelLoad;
-		PlayerVars.buff = this;
+		PlayerVars.buffs.Add(this);
 	}
 
 	// Use this for initialization
