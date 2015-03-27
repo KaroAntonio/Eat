@@ -26,6 +26,7 @@ public class Buff : MonoBehaviour{
 	public float speed;
 	public float jump;
 	public float fog; // fog intensity
+	public float scale; // player scaling
 
 	public void Apply(){
 //		Debug.Log("Apply Buff!");

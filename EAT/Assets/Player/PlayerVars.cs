@@ -24,6 +24,7 @@ public class PlayerVars : MonoBehaviour {
 	public static float buffSpeed;
 	public static float buffJump;
 	public static float buffFog;
+	public static float buffScale;
 
 	// buffs themselves
 	static public List<Buff> buffs;
@@ -55,6 +56,7 @@ public class PlayerVars : MonoBehaviour {
 		float calcBuffSpeed = 0.0f; // temporary variable to store calculations
 		float calcBuffJump = 0.0f;
 		float calcBuffFog = 0.0f;
+		float calcBuffScale = 0.0f;
 		int i = 0; // index value
 		while(i < buffs.Count){ // make sure we are in Count range
 			if((Time.timeSinceLevelLoad - buffs[i].time) > buffs[i].duration){
@@ -64,11 +66,14 @@ public class PlayerVars : MonoBehaviour {
 			calcBuffSpeed += buffs[i].speed;
 			calcBuffJump += buffs[i].jump;
 			calcBuffFog += buffs[i].fog;
+			calcBuffScale += buffs[i].scale;
 			i++;
 		}
+
 		// set calculated values to be public
 		buffSpeed = calcBuffSpeed;
 		buffJump = calcBuffJump;
 		buffFog = calcBuffFog;
+		buffScale = calcBuffScale;
 	}
 }

@@ -21,6 +21,10 @@ public class Movement : MonoBehaviour {
 	}
 
 	void Update() {
+		if(PlayerVars.buffScale != 0.0f){
+			player.transform.localScale = new Vector3(1, 1, 1) * PlayerVars.buffScale;
+		}
+
 		player = gameObject;
 
 		//Only move/ jump from ground
