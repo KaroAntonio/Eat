@@ -31,6 +31,10 @@ public class Movement : MonoBehaviour {
 
 				direction *= velocity;
 
+				if(PlayerVars.buffSpeed != 0.0f){
+					direction *= PlayerVars.buffSpeed;
+				}
+
 				animator.SetBool("Jumping", false);
 				
 				if (direction != Vector3.zero) {
@@ -45,6 +49,10 @@ public class Movement : MonoBehaviour {
 						animator.SetBool("Jumping", true);
 						
 						direction.y = jumpVelocity;
+
+						if(PlayerVars.buffJump != 0.0f){
+							direction.y *= PlayerVars.buffJump;
+						}
 				}
 	
 		} else {
