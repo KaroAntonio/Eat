@@ -22,6 +22,8 @@ public class PlayerVars : MonoBehaviour {
 
 	// buff variables
 	public static float buffSpeed;
+	public static float buffJump;
+	public static float buffFog;
 
 	// buffs themselves
 	static public List<Buff> buffs;
@@ -36,7 +38,7 @@ public class PlayerVars : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		Debug.Log(buffSpeed);
+//		Debug.Log(buffSpeed);
 		float newHungerTime = Time.time;
 		/*	if the real time since the last decrement is at or above
 			the ENERGY_DEC_TIME interval, decrement energy by ENERGY_DEC*/
@@ -51,6 +53,8 @@ public class PlayerVars : MonoBehaviour {
 		// iterate the linked list of buffs, and aggregate overall buff values
 		// also removing expired buffs
 		float calcBuffSpeed = 0.0f; // temporary variable to store calculations
+		float calcBuffJump = 0.0f;
+		float calcBuffFog = 0.0f;
 		int i = 0; // index value
 		while(i < buffs.Count){ // make sure we are in Count range
 			while((Time.timeSinceLevelLoad - buffs[i].time) > buffs[i].duration){
@@ -58,9 +62,13 @@ public class PlayerVars : MonoBehaviour {
 				continue; // go back to top of loop
 			}
 			calcBuffSpeed += buffs[i].speed;
+			calcBuffJump += buffs[i].jump;
+			calcBuffFog += buffs[i].fog;
 			i++;
 		}
 		// set calculated values to be public
 		buffSpeed = calcBuffSpeed;
+		buffJump = calcBuffJump;
+		buffFog = calcBuffFog;
 	}
 }

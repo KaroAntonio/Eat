@@ -24,6 +24,8 @@ public class Buff : MonoBehaviour{
 	public float time;
 	public float duration;
 	public float speed;
+	public float jump;
+	public float fog; // fog intensity
 
 	public void Apply(){
 //		Debug.Log("Apply Buff!");

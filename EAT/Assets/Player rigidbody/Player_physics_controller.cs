@@ -171,7 +171,10 @@ public class Player_physics_controller : MonoBehaviour
 				// move heading.
 				// xz move normalized.
 				base_forward_a = (input_z);
+				
+
 				base_strafe_a = (input_x);
+
 				Vector3 xz_a_norm = new Vector3 (base_strafe_a, 0, base_forward_a).normalized;
 				base_forward_a = xz_a_norm.z * MOVE_ACCEL;
 				base_strafe_a = xz_a_norm.x * MOVE_ACCEL;
@@ -261,7 +264,7 @@ public class Player_physics_controller : MonoBehaviour
 				// breaking force
 				control.AddForce (xz_break_heading * MOVE_ACCEL * BREAK_CONTROL, ForceMode.Acceleration);
 				// move force
-				control.AddForce (a_sum, ForceMode.Acceleration);
+		control.AddForce (a_sum, ForceMode.Acceleration);
 				// jump force
 				control.AddForce (transform.up * jump_a, ForceMode.Acceleration);
 
