@@ -1,0 +1,76 @@
+-debug
+-target:library
+-nowarn:0169
+-out:Temp/Assembly-CSharp.dll
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll"
+-r:Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll
+-r:Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll"
+-r:"Assets/Environment/Volumetric Clouds/DLL/CloudsToy.dll"
+-r:"Assets/Standard Assets/AstarPathfindingProject/Plugins/JsonFx/Pathfinding.JsonFx.dll"
+-r:"Assets/Standard Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll"
+-define:UNITY_4_6_1
+-define:UNITY_4_6
+-define:UNITY_STANDALONE_OSX
+-define:ENABLE_MICROPHONE
+-define:ENABLE_TEXTUREID_MAP
+-define:ENABLE_UNITYEVENTS
+-define:ENABLE_NEW_HIERARCHY 
+-define:ENABLE_AUDIO_FMOD
+-define:UNITY_STANDALONE
+-define:ENABLE_MONO
+-define:ENABLE_TERRAIN
+-define:ENABLE_SUBSTANCE
+-define:ENABLE_GENERICS
+-define:INCLUDE_WP8SUPPORT
+-define:ENABLE_MOVIES
+-define:ENABLE_WWW
+-define:ENABLE_IMAGEEFFECTS
+-define:ENABLE_4_6_FEATURES
+-define:INCLUDE_WP_BLUE_SUPPORT
+-define:ENABLE_WEBCAM
+-define:INCLUDE_METROSUPPORT
+-define:RENDER_SOFTWARE_CURSOR
+-define:ENABLE_NETWORK
+-define:ENABLE_PHYSICS
+-define:ENABLE_CACHING
+-define:ENABLE_CLOTH
+-define:ENABLE_2D_PHYSICS
+-define:ENABLE_GAMECENTER
+-define:ENABLE_SHADOWS
+-define:ENABLE_AUDIO
+-define:ENABLE_NAVMESH_CARVING
+-define:ENABLE_DUCK_TYPING
+-define:ENABLE_SINGLE_INSTANCE_BUILD_SETTING
+-define:ENABLE_PROFILER
+-define:UNITY_EDITOR
+-define:UNITY_EDITOR_WIN
+Assets/Environment/Chicken/Chicken.cs
+Assets/Environment/Cloud.cs
+"Assets/Environment/Volumetric Clouds/Scripts/CloudsToy.cs"
+Assets/Food/Food.cs
+Assets/Items/AntiMagnet/AntiMagnet.cs
+Assets/Items/Item.cs
+Assets/Items/Magnet/Magnet.cs
+Assets/Menu/DeathScreen.cs
+Assets/Menu/MainMenu.cs
+Assets/Menu/Menu.cs
+Assets/Non-Player/FoodShepherd/FoodShepherd.cs
+Assets/Non-Player/TheFuzz/FuzzySpawn.cs
+Assets/Non-Player/TheFuzz/TheFuzz.cs
+"Assets/Player rigidbody/Cam_controller.cs"
+"Assets/Player rigidbody/Player_physics_controller.cs"
+Assets/Player/Buff.cs
+Assets/Player/GUI/PlayerUI.cs
+Assets/Player/Movement.cs
+Assets/Player/PlayerVars.cs
+Assets/Text/FuzzyText.cs
+Assets/Text/GenericTexts.cs
+Assets/Text/QueenBText.cs
+Assets/Text/SmartTextMesh.cs
+Assets/Text/StanielText.cs
+Assets/Text/TestText.cs
+Assets/Text/TextList.cs
+-r:"C:/Program Files/Unity/Editor/Data/Mono\lib/mono/unity\System.Runtime.Serialization.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Mono\lib/mono/unity\System.Xml.Linq.dll"
