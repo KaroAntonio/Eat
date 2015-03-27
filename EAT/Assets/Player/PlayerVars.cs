@@ -57,7 +57,7 @@ public class PlayerVars : MonoBehaviour {
 		float calcBuffFog = 0.0f;
 		int i = 0; // index value
 		while(i < buffs.Count){ // make sure we are in Count range
-			while((Time.timeSinceLevelLoad - buffs[i].time) > buffs[i].duration){
+			if((Time.timeSinceLevelLoad - buffs[i].time) > buffs[i].duration){
 				buffs.RemoveAt(i);
 				continue; // go back to top of loop
 			}
