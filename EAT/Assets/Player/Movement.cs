@@ -14,8 +14,11 @@ public class Movement : MonoBehaviour {
 	public Animator animator;
 	public static GameObject player;
 	CharacterController controller;
+	private Vector3 restoreScale;
 
 	void Start(){
+		player = gameObject;
+		restoreScale = player.transform.localScale;
 		controller = GetComponent<CharacterController>();
 		animator = GetComponent<Animator>();
 	}
@@ -23,9 +26,11 @@ public class Movement : MonoBehaviour {
 	void Update() {
 		if(PlayerVars.buffScale != 0.0f){
 			player.transform.localScale = new Vector3(1, 1, 1) * PlayerVars.buffScale;
+		} else if(player.transform.localScale != restoreScale){
+			// jump so we don't sink into the ground
+			controller.Move(Vector3.up * restoreScale.y);
+			player.transform.localScale = restoreScale;
 		}
-
-		player = gameObject;
 
 		//Only move/ jump from ground
 		if (controller.isGrounded) {
