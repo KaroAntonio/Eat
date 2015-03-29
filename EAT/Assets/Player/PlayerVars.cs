@@ -23,7 +23,8 @@ public class PlayerVars : MonoBehaviour {
 	// buff variables
 	public static float buffSpeed;
 	public static float buffJump;
-	public static float buffFog;
+	public static Color buffFogColor;
+	public static float buffFogIntensity;
 	public static float buffScale;
 
 	// buffs themselves
@@ -55,7 +56,7 @@ public class PlayerVars : MonoBehaviour {
 		// also removing expired buffs
 		float calcBuffSpeed = 0.0f; // temporary variable to store calculations
 		float calcBuffJump = 0.0f;
-		float calcBuffFog = 0.0f;
+		float calcBuffFogIntensity = 0.0f;
 		float calcBuffScale = 0.0f;
 		int i = 0; // index value
 		while(i < buffs.Count){ // make sure we are in Count range
@@ -65,15 +66,19 @@ public class PlayerVars : MonoBehaviour {
 			}
 			calcBuffSpeed += buffs[i].speed;
 			calcBuffJump += buffs[i].jump;
-			calcBuffFog += buffs[i].fog;
 			calcBuffScale += buffs[i].scale;
+			// for fog we just use the strongest value for intensity
+			if(buffs[i].fogIntensity > calcBuffFogIntensity){
+				calcBuffFogIntensity = buffs[i].fogIntensity;
+			}
 			i++;
 		}
 
 		// set calculated values to be public
 		buffSpeed = calcBuffSpeed;
 		buffJump = calcBuffJump;
-		buffFog = calcBuffFog;
+		buffFogIntensity = calcBuffFogIntensity;
 		buffScale = calcBuffScale;
+		buffFogColor = buffs[buffs.Count - 1].fogColor;
 	}
 }

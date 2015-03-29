@@ -30,12 +30,6 @@ public class PlayerUI : MonoBehaviour {
 		hungerBar.rectTransform.anchoredPosition = new Vector2(0, (0 - Screen.height / 2) + 20);
 		timeText.rectTransform.anchoredPosition = new Vector2(40, (0 - Screen.height / 2) + 35);
 		stomach.rectTransform.anchoredPosition = new Vector2(220, (0 - Screen.height / 2) + 20);
-
-		// fog settings
-		RenderSettings.fog = true;
-		RenderSettings.fogStartDistance = 0.0f;
-		RenderSettings.fogDensity = 0.0f;
-		
 	}
 		
 	// Update is called once per frame
@@ -49,9 +43,5 @@ public class PlayerUI : MonoBehaviour {
 		// set time text to time in minutes and seconds since level start
 		timeText.text = ((int)(Time.timeSinceLevelLoad / 60)).ToString("000") + ":" +
 			(Time.timeSinceLevelLoad % 60).ToString("00");
-
-		// change fog according to buffs
-		RenderSettings.fogDensity = PlayerVars.buffFog;
-		Debug.Log(RenderSettings.fogDensity);
 	}
 }

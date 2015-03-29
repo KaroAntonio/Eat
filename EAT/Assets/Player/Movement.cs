@@ -21,6 +21,11 @@ public class Movement : MonoBehaviour {
 		restoreScale = player.transform.localScale;
 		controller = GetComponent<CharacterController>();
 		animator = GetComponent<Animator>();
+
+		// fog settings
+		RenderSettings.fog = true;
+		RenderSettings.fogStartDistance = 0.0f;
+		RenderSettings.fogDensity = 0.0f;
 	}
 
 	void Update() {
@@ -31,6 +36,11 @@ public class Movement : MonoBehaviour {
 			controller.Move(Vector3.up * restoreScale.y);
 			player.transform.localScale = restoreScale;
 		}
+
+		// change fog according to buffs
+		RenderSettings.fogDensity = PlayerVars.buffFogIntensity;
+		RenderSettings.fogStartDistance = 0.0f;
+		RenderSettings.fogColor = PlayerVars.buffFogColor;
 
 		//Only move/ jump from ground
 		if (controller.isGrounded) {
