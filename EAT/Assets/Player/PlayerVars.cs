@@ -79,6 +79,8 @@ public class PlayerVars : MonoBehaviour {
 		buffJump = calcBuffJump;
 		buffFogIntensity = calcBuffFogIntensity;
 		buffScale = calcBuffScale;
-		buffFogColor = buffs[buffs.Count - 1].fogColor;
+		if(buffs.Count != 0){
+			buffFogColor = buffs[buffs.Count - 1].fogColor;
+		}
 	}
 }
