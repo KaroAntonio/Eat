@@ -6,27 +6,53 @@ public class Movement : MonoBehaviour {
 
 
 	//Constnts
-	public float velocity = 20.0F;
+	public float velocity = 5.0F;
 	private Vector3 direction = Vector3.zero;
 	public float jumpVelocity = 15.0F; 
 	public float gravity = 23.0F;
 	float rotationY = 0;
 	public Animator animator;
 	public static GameObject player;
-	
-	void Update() {
+	CharacterController controller;
+	private Vector3 restoreScale;
 
+	void Start(){
 		player = gameObject;
+		restoreScale = player.transform.localScale;
+		controller = GetComponent<CharacterController>();
+		animator = GetComponent<Animator>();
 
-		CharacterController controller = GetComponent<CharacterController>();
+		// fog settings
+		RenderSettings.fog = true;
+		RenderSettings.fogStartDistance = 0.0f;
+		RenderSettings.fogDensity = 0.0f;
+	}
+
+	void Update() {
+		if(PlayerVars.buffScale != 0.0f){
+			player.transform.localScale = new Vector3(1, 1, 1) * PlayerVars.buffScale;
+		} else if(player.transform.localScale != restoreScale){
+			// jump so we don't sink into the ground
+			controller.Move(Vector3.up * restoreScale.y);
+			player.transform.localScale = restoreScale;
+		}
+
+		// change fog according to buffs
+		RenderSettings.fogDensity = PlayerVars.buffFogIntensity;
+		RenderSettings.fogStartDistance = 0.0f;
+		RenderSettings.fogColor = PlayerVars.buffFogColor;
 
 		//Only move/ jump from ground
 		if (controller.isGrounded) {
-				direction = new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis ("Vertical"));
+				direction = new Vector3 (Input.GetAxis ("Straft"), 0, Input.GetAxis ("Forward"));
 
 				direction = transform.TransformDirection(direction);
 
 				direction *= velocity;
+
+				if(PlayerVars.buffSpeed != 0.0f){
+					direction *= PlayerVars.buffSpeed;
+				}
 
 				animator.SetBool("Jumping", false);
 				
@@ -42,6 +68,10 @@ public class Movement : MonoBehaviour {
 						animator.SetBool("Jumping", true);
 						
 						direction.y = jumpVelocity;
+
+						if(PlayerVars.buffJump != 0.0f){
+							direction.y *= PlayerVars.buffJump;
+						}
 				}
 	
 		} else {
@@ -51,12 +81,12 @@ public class Movement : MonoBehaviour {
 		}
 
 		//Mouse Yaw
-		transform.Rotate(0, Input.GetAxis("Mouse X") * 13, 0);
+		transform.Rotate(0, Input.GetAxis("Mouse X") * 1, 0);
 
 		//Mouse Pitch
-		//rotationY += Input.GetAxis("Mouse Y") * 15;
-		//rotationY = Mathf.Clamp (rotationY, -60, 60);
-		//transform.localEulerAngles = new Vector3(-rotationY, transform.localEulerAngles.y, 0);
+		rotationY += Input.GetAxis("Mouse Y") * 1;
+		rotationY = Mathf.Clamp (rotationY, -60, 60);
+		transform.localEulerAngles = new Vector3(-rotationY, transform.localEulerAngles.y, 0);
 
 		//Fall
 		direction.y -= gravity * Time.deltaTime;
