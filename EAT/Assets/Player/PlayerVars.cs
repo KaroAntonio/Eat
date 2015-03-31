@@ -74,6 +74,18 @@ public class PlayerVars : MonoBehaviour {
 			i++;
 		}
 
+		if(calcBuffSpeed <= 0){
+			calcBuffSpeed = 1;
+		}
+
+		if(calcBuffJump <= 0){
+			calcBuffJump = 1;
+		}
+
+		if(calcBuffScale <= 0){
+			calcBuffScale = 1;
+		}
+
 		// set calculated values to be public
 		buffSpeed = calcBuffSpeed;
 		buffJump = calcBuffJump;
