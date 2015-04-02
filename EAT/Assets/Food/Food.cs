@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using RAIN.Entities.Aspects;
+using RAIN.Entities;
 
 public class Food : MonoBehaviour {
 
@@ -7,6 +9,7 @@ public class Food : MonoBehaviour {
 	public GameObject shepherd;
 	public float foodValue;
 	private Buff buff;
+	private RAINAspect aspect;
 
 
 	Component halo;
@@ -19,6 +22,8 @@ public class Food : MonoBehaviour {
 		//INITIALIZE Halo to OFF
 		halo.GetType().GetProperty("enabled").SetValue(halo, false, null);
 		buff = GetComponent<Buff>();
+		aspect = GameObject.Find("AI Aspect").GetComponent<EntityRig>().Entity.GetAspect("aPlayer");
+		aspect.IsActive = false;
 	}
 
 	void Update () {
@@ -49,7 +54,7 @@ public class Food : MonoBehaviour {
 
 				//CHECK if you got caught 
 				if (shepherd.name != "BlindShepherd") {
-
+					aspect.IsActive = true;
 					float angle = Vector3.Angle(shepherd.transform.forward, transform.position - shepherd.transform.position);
 					
 					if (angle < 70f) {
