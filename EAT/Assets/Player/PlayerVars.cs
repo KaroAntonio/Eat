@@ -112,6 +112,5 @@ public class PlayerVars : MonoBehaviour {
 		} else{
 			aspect.IsActive = false;
 		}
-		Debug.Log(aspect.IsActive);
 	}
 }
