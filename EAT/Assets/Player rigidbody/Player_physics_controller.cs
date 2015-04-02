@@ -253,7 +253,7 @@ public class Player_physics_controller : MonoBehaviour
 
 				// Combine the forward control values and limiter.
 				collider.material.staticFriction = init_friction / PlayerVars.buffSpeed;
-				Debug.Log (collider.material.staticFriction + " " + xz_a_limiter);
+//				Debug.Log (collider.material.staticFriction + " " + xz_a_limiter);
 				Vector3 a_sum = (transform.forward * base_forward_a + transform.right * base_strafe_a) * v_boost * xz_a_limiter * PlayerVars.buffSpeed;
 
 				// when in air or high slope, then very little drive power.

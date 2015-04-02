@@ -10,6 +10,8 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using RAIN.Entities;
+using RAIN.Entities.Aspects;
 
 public class PlayerVars : MonoBehaviour {
 	public static bool allowDeath;
@@ -28,14 +30,23 @@ public class PlayerVars : MonoBehaviour {
 	public static float buffScale;
 
 	// buffs themselves
-	static public List<Buff> buffs;
-	
+	public static List<Buff> buffs;
+
+	// AI chase variables
+	public static float fugitiveExpire; // time it takes without being seen for fugitive status to expire
+	public static float fugitiveTime; // time player was last seen as a fugitive
+	private RAINAspect aspect; // AI aspect seen by guards
+
 	// Use this for initialization
 	void Start () {
 		hungerTime = Time.time;
 		hunger = MAX_HUNGER * 0.5f;
 		allowDeath = false;
 		buffs = new List<Buff>();
+		fugitiveTime = 0.0f;
+		fugitiveExpire = 10.0f; // initial fugitive expire time
+		aspect = aspect = GameObject.Find("AI Aspect").GetComponent<EntityRig>().Entity.GetAspect("aPlayer");
+		aspect.IsActive = false; // we do not start as a fugitive
 	}
 
 	// Update is called once per frame
@@ -94,5 +105,13 @@ public class PlayerVars : MonoBehaviour {
 		if(buffs.Count != 0){
 			buffFogColor = buffs[buffs.Count - 1].fogColor;
 		}
+
+		// check if a warrent has been issued...
+		if((fugitiveTime != 0.0f) && ((fugitiveTime + fugitiveExpire) > Time.timeSinceLevelLoad)){
+			aspect.IsActive = true;
+		} else{
+			aspect.IsActive = false;
+		}
+		Debug.Log(aspect.IsActive);
 	}
 }

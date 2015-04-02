@@ -21,8 +21,6 @@ public class CamEffects : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log(PlayerVars.buffSpeed);
-
 		RenderSettings.fogDensity = PlayerVars.buffFogIntensity;
 		RenderSettings.fogColor = PlayerVars.buffFogColor;
 

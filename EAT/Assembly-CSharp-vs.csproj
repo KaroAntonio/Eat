@@ -49,6 +49,7 @@
      <Compile Include="Assets\AI\Actions\ChooseFleePosition.cs" />
      <Compile Include="Assets\AI\Actions\ChooseWanderPosition.cs" />
      <Compile Include="Assets\AI\Actions\GetStandOnPoint.cs" />
+     <Compile Include="Assets\AI\Chase.cs" />
      <Compile Include="Assets\AstarPathfindingProject\Core\AI\AIPath.cs" />
      <Compile Include="Assets\AstarPathfindingProject\Core\AI\NavmeshController.cs" />
      <Compile Include="Assets\AstarPathfindingProject\Core\AI\Seeker.cs" />
