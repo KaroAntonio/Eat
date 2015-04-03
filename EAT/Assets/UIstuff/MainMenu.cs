@@ -4,7 +4,7 @@ using System.Collections;
 public class MainMenu : MonoBehaviour {
 
 	void MainMenuStart(){
-		Application.LoadLevel("The Leopard Box");
+		Application.LoadLevel("nomsTown");
 	}
 
 	void MainMenuQuit(){

@@ -1,8 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Player\PlayerVars.cs">
     <Files>
-      <File FileName="Assets\Player\PlayerVars.cs" Line="115" Column="1" />
+      <File FileName="Assets\Player\PlayerVars.cs" Line="19" Column="42" />
       <File FileName="Assets\AI\Chase.cs" Line="1" Column="1" />
       <File FileName="Assets\Player\CamEffects.cs" Line="1" Column="1" />
       <File FileName="Assets\Food\Food.cs" Line="1" Column="1" />

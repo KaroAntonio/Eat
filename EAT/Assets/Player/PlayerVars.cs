@@ -16,7 +16,7 @@ using RAIN.Entities.Aspects;
 public class PlayerVars : MonoBehaviour {
 	public static bool allowDeath;
 	public const float MAX_HUNGER = 1000;
-	public const float HUNGER_DEC_TIME = 0.01f; // time interval in seconds between energy decrements
+	public const float HUNGER_DEC_TIME = 0.1f; // time interval in seconds between energy decrements
 	public const int HUNGER_DEC = 1; // amount by which energy is decremented
 	private static float hungerTime; // real time since startup at which "energy" was last decremented
 	public static float hunger; // referred to as "hunger" in group discussions
