@@ -7,6 +7,7 @@ using RAIN.Entities.Aspects;
 
 
 public class Chase : MonoBehaviour {
+	public const float DAMAGE_PLAYER = 100.0f;
 	private RAINSenses senses;
 
 	private bool seePlayer(){
@@ -22,6 +23,13 @@ public class Chase : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		senses = GameObject.Find("AI").GetComponent<AIRig>().AI.Senses;
+	}
+
+	void OnTriggerStay(Collider other){
+		if(other.name == "FPC" && seePlayer()){
+			Debug.Log("Damage!");
+			PlayerVars.hunger -= DAMAGE_PLAYER;
+		}
 	}
 	
 	// Update is called once per frame
