@@ -20,6 +20,7 @@ public class PlayerUI : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Screen.lockCursor = true;
 		GUI.color = new Color32(255, 255, 255, 100);
 		hungerBar = GameObject.Find("HungerBar").GetComponent<Image>();
 		hungerFill = GameObject.Find("HungerFill").GetComponent<Image>();
