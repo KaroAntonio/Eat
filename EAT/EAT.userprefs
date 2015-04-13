@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Player\Movement.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\AI\Chase.cs">
     <Files>
-      <File FileName="Assets\Player\Buff.cs" Line="34" Column="30" />
-      <File FileName="Assets\Player\Movement.cs" Line="31" Column="47" />
+      <File FileName="Assets\AI\Chase.cs" Line="13" Column="2" />
+      <File FileName="Assets\Player\PlayerUI.cs" Line="23" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

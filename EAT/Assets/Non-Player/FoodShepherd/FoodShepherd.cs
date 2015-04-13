@@ -32,7 +32,7 @@ public class FoodShepherd : MonoBehaviour {
 		//TEXT Display Initiation
 		if ((text != null) && (textList != null)) {
 			textList.addText();
-			Debug.Log(textList.texts.Count);
+			//Debug.Log(textList.texts.Count);
 			if (textList.texts.Count > 0) {
 				((SmartTextMesh)text.GetComponent ("SmartTextMesh")).UnwrappedText = textList.texts [textindex % textList.texts.Count];
 				InvokeRepeating ("updateText", Random.Range (0, textSpeed) + textSpeed, textSpeed);

@@ -7,7 +7,11 @@ Project("{EA1D9F3A-A9B1-05B6-F30E-95900B9222B4}") = "EAT", "Assembly-CSharp.cspr
 EndProject
 Project("{EA1D9F3A-A9B1-05B6-F30E-95900B9222B4}") = "EAT", "Assembly-CSharp-Editor.csproj", "{0DF3C2DD-CC14-0857-A3FB-3BD281B86F3D}"
 EndProject
+Project("{EA1D9F3A-A9B1-05B6-F30E-95900B9222B4}") = "EAT", "Assembly-Boo-Editor.booproj", "{67426F46-3A47-6A1C-9D9A-CA44009D4788}"
+EndProject
 Project("{EA1D9F3A-A9B1-05B6-F30E-95900B9222B4}") = "EAT", "Assembly-UnityScript-firstpass.unityproj", "{2137EB51-67D4-87AB-97D5-236EF7A04310}"
+EndProject
+Project("{EA1D9F3A-A9B1-05B6-F30E-95900B9222B4}") = "EAT", "Assembly-UnityScript-Editor.unityproj", "{D777A934-7CFD-00B1-F6DE-59C4F91A368B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,18 +31,23 @@ Global
 		{0DF3C2DD-CC14-0857-A3FB-3BD281B86F3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DF3C2DD-CC14-0857-A3FB-3BD281B86F3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DF3C2DD-CC14-0857-A3FB-3BD281B86F3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67426F46-3A47-6A1C-9D9A-CA44009D4788}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67426F46-3A47-6A1C-9D9A-CA44009D4788}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67426F46-3A47-6A1C-9D9A-CA44009D4788}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67426F46-3A47-6A1C-9D9A-CA44009D4788}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2137EB51-67D4-87AB-97D5-236EF7A04310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2137EB51-67D4-87AB-97D5-236EF7A04310}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2137EB51-67D4-87AB-97D5-236EF7A04310}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2137EB51-67D4-87AB-97D5-236EF7A04310}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D777A934-7CFD-00B1-F6DE-59C4F91A368B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D777A934-7CFD-00B1-F6DE-59C4F91A368B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D777A934-7CFD-00B1-F6DE-59C4F91A368B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D777A934-7CFD-00B1-F6DE-59C4F91A368B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																																																										GlobalSection(MonoDevelopProperties) = preSolution
-=======
-																																																																																																							GlobalSection(MonoDevelopProperties) = preSolution
->>>>>>> Stashed changes
+																																																																																																																																																													GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

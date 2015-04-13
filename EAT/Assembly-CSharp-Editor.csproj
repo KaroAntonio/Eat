@@ -46,23 +46,51 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AstarPathfindingProject\Editor\AnimationLinkEditor.cs" />
+     <Compile Include="Assets\AstarPathfindingProject\Editor\AstarPathEditor.cs" />
+     <Compile Include="Assets\AstarPathfindingProject\Editor\AstarUpdateWindow.cs" />
+     <Compile Include="Assets\AstarPathfindingProject\Editor\EditorGUIx.cs" />
+     <Compile Include="Assets\AstarPathfindingProject\Editor\EditorUtilities.cs" />
+     <Compile Include="Assets\AstarPathfindingProject\Editor\GraphEditors\GraphEditor.cs" />
+     <Compile Include="Assets\AstarPathfindingProject\Editor\GraphEditors\GridGeneratorEditor.cs" />
+     <Compile Include="Assets\AstarPathfindingProject\Editor\GraphEditors\NavMeshGeneratorEditor.cs" />
+     <Compile Include="Assets\AstarPathfindingProject\Editor\GraphEditors\PointGeneratorEditor.cs" />
+     <Compile Include="Assets\AstarPathfindingProject\Editor\GraphUpdateSceneEditor.cs" />
+     <Compile Include="Assets\AstarPathfindingProject\Editor\Misc\AstarEnumFlagDrawer.cs" />
+     <Compile Include="Assets\AstarPathfindingProject\Editor\ModifierEditors\RaycastModifierEditor.cs" />
+     <Compile Include="Assets\AstarPathfindingProject\Editor\ModifierEditors\SmoothModifierEditor.cs" />
+     <Compile Include="Assets\AstarPathfindingProject\Editor\SeekerEditor.cs" />
      <Compile Include="Assets\Environment\Volumetric Clouds\Editor\CloudsToyEditor.cs" />
-     <None Include="Assets\Standard Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh2.shader" />
+     <Compile Include="Assets\RAIN\Editor\ScriptTemplates\ActionTemplate_CS.cs" />
+     <Compile Include="Assets\RAIN\Editor\ScriptTemplates\DecisionTemplate_CS.cs" />
+     <Compile Include="Assets\Synapse\Editor\SynapseAssetInspector.cs" />
+     <None Include="Assets\RAIN\Editor\Shaders\AspectSphereShader.shader" />
+     <None Include="Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh2.shader" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
-     <None Include="Assets\Standard Assets\AstarPathfindingProject\Plugins\DotNetZip\License.txt" />
-     <None Include="Assets\Standard Assets\AstarPathfindingProject\ExampleScenes\Materials\Projector Multiply.shader" />
+     <None Include="Assets\Synapse\Readme.txt" />
+     <None Include="Assets\AstarPathfindingProject\Plugins\DotNetZip\License.txt" />
+     <None Include="Assets\AstarPathfindingProject\ExampleScenes\Materials\Projector Multiply.shader" />
+     <None Include="Assets\RAIN\Editor\Shaders\VisualSensorLineShader.shader" />
      <None Include="Assets\Environment\Resources\CloudsToy Shaders\CloudRealistic.shader" />
-     <None Include="Assets\Standard Assets\AstarPathfindingProject\ExampleScenes\Materials\DiffuseAlwaysVisible.shader" />
-     <None Include="Assets\Standard Assets\AstarPathfindingProject\Plugins\dependencies.txt" />
-     <None Include="Assets\Standard Assets\AstarPathfindingProject\ExampleScenes\_Example Scenes.txt" />
+     <None Include="Assets\AstarPathfindingProject\ExampleScenes\Materials\DiffuseAlwaysVisible.shader" />
+     <None Include="Assets\RAIN\Editor\Shaders\NavMeshContourShader.shader" />
+     <None Include="Assets\AstarPathfindingProject\Plugins\dependencies.txt" />
+     <None Include="Assets\RAIN\Editor\Shaders\WaypointShader.shader" />
+     <None Include="Assets\AstarPathfindingProject\ExampleScenes\_Example Scenes.txt" />
+     <None Include="Assets\RAIN\Editor\ScriptTemplates\BehaviorTreeTemplate.xml" />
      <None Include="Assets\Environment\Resources\CloudsToy Shaders\CloudBright.shader" />
-     <None Include="Assets\Standard Assets\AstarPathfindingProject\Readme_upgrading.txt" />
-     <None Include="Assets\Standard Assets\AstarPathfindingProject\ExampleScenes\Materials\Projector Light.shader" />
+     <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
+     <None Include="Assets\AstarPathfindingProject\Readme_upgrading.txt" />
+     <None Include="Assets\AstarPathfindingProject\ExampleScenes\Materials\Projector Light.shader" />
      <None Include="Assets\Environment\Volumetric Clouds\Instructions.txt" />
-     <None Include="Assets\Standard Assets\AstarPathfindingProject\Readme.txt" />
-     <None Include="Assets\Standard Assets\AstarPathfindingProject\Plugins\JsonFx\License.txt" />
-     <None Include="Assets\Standard Assets\AstarPathfindingProject\Plugins\JsonFx\Readme.txt" />
-     <None Include="Assets\Standard Assets\AstarPathfindingProject\link.xml" />
+     <None Include="Assets\AstarPathfindingProject\Readme.txt" />
+     <None Include="Assets\RAIN\Editor\Shaders\VisualSensorRingShader.shader" />
+     <None Include="Assets\RAIN\ReleaseNotes.txt" />
+     <None Include="Assets\RAIN\Editor\Shaders\AspectRingShader.shader" />
+     <None Include="Assets\AstarPathfindingProject\Plugins\JsonFx\License.txt" />
+     <None Include="Assets\AstarPathfindingProject\Plugins\JsonFx\Readme.txt" />
+     <None Include="Assets\RAIN\Editor\Shaders\NavMeshColliderShader.shader" />
+     <None Include="Assets\AstarPathfindingProject\link.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -72,11 +100,47 @@
  <Reference Include="CloudsToy">
  <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/Environment/Volumetric Clouds/DLL/CloudsToy.dll</HintPath>
  </Reference>
+ <Reference Include="NewSynapseLibrary0">
+ <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/SynapseEditor/NewSynapseLibrary0.dll</HintPath>
+ </Reference>
+ <Reference Include="RAIN">
+ <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/RAIN/RAIN.dll</HintPath>
+ </Reference>
+ <Reference Include="RAINMetaform">
+ <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/RAIN/RAINMetaform.dll</HintPath>
+ </Reference>
+ <Reference Include="RAINEditor">
+ <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/RAIN/Editor/RAINEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="AetherUnity">
+ <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/RAIN/Editor/AetherUnity.dll</HintPath>
+ </Reference>
+ <Reference Include="LegionRestModel">
+ <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/RAIN/Editor/LegionRestModel.dll</HintPath>
+ </Reference>
+ <Reference Include="RAINMetaformEditor">
+ <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/RAIN/Editor/RAINMetaformEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="RAINUpdater">
+ <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/RAIN/Editor/RAINUpdater.dll</HintPath>
+ </Reference>
+ <Reference Include="Synapse.Runtime">
+ <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/Synapse/Synapse.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="SynapseDemo">
+ <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/Synapse/Demo/SynapseDemo.dll</HintPath>
+ </Reference>
+ <Reference Include="Synapse.Editor">
+ <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/Synapse/Editor/Synapse.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Synapse.Assets">
+ <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/Synapse/Editor/Synapse.Assets.dll</HintPath>
+ </Reference>
  <Reference Include="Pathfinding.JsonFx">
- <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/Standard Assets/AstarPathfindingProject/Plugins/JsonFx/Pathfinding.JsonFx.dll</HintPath>
+ <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/AstarPathfindingProject/Plugins/JsonFx/Pathfinding.JsonFx.dll</HintPath>
  </Reference>
  <Reference Include="Pathfinding.Ionic.Zip.Reduced">
- <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/Standard Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+ <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>

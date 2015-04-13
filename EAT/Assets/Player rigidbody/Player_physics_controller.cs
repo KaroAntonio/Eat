@@ -17,14 +17,16 @@ using System;
 
 public class Player_physics_controller : MonoBehaviour
 {
-
 		// physics values.
 		// Naming convention between velocity, accel, or force maybe wrong.
 		public float mouse_sensitivity = 1;
-		public  float MOVE_ACCEL = 50;			// this control force of movement. MODE.ACCEL
-		public float TURN_ACCEL = 25f;				// force body turns to were it looks.
-		private const  float BREAK_CONTROL = .5f;			// break force were zx input is zero.	
+		public  float MOVE_ACCEL = 240;			// this control force of movement. MODE.ACCEL
+		public float TURN_ACCEL = 50f;				// force body turns to were it looks.
+		private const  float BREAK_CONTROL = .2f;			// break force were zx input is zero.	
+		private const float JUMP_UPLIFT = 35;			// jump force.
+		private const float JUMP_CONTROL = .97f;		// reduces jump accel as to air-hang longer.
 		private float SLOPE_SLIP_ANGLE = Mathf.Cos (50 * Mathf.Deg2Rad);
+		private float NO_CONTACT_POWER_RATIO = .3f;			// when feet not on the ground, power drops.
 		private const float IMPUSLE = 100f;
 		private const float RUN_MAX_SPEED = 5;			// velocity cap running.
 		private const float MOVE_MAX_SPEED = 3.5f;		// walking cap.
@@ -36,8 +38,6 @@ public class Player_physics_controller : MonoBehaviour
 		private const float ROTATION_MAX_SPEED = 270;
 		private const float ROTATE_ACCEL = 0f;
 		private const float ROTATE_RESIST = ROTATION_MAX_SPEED * 2.9f;
-		private const float JUMP_UPLIFT = 30;			// jump force.
-		private const float JUMP_CONTROL = .09f;		// reduces jump accel as to air-hang longer.
 		private const float INVS_RUN_MAX_SPEED = 1f / RUN_MAX_SPEED;
 		private const float INVS_ROTATION_MAX_SPEED = 1f / ROTATION_MAX_SPEED;
 		private const float TINY_NUM = 0.001f;
@@ -64,7 +64,10 @@ public class Player_physics_controller : MonoBehaviour
 		private float rotation_x;
 		public float rot_a_y;					// look rotation
 		public float rot_a_x;
-		Quaternion look;
+		private Quaternion look;
+		private float init_friction;
+		private Vector3 init_player_scale;
+
 		//animation states and hashed vars for speed.
 		private AnimatorStateInfo currentAnimState;
 		//body states
@@ -129,6 +132,8 @@ public class Player_physics_controller : MonoBehaviour
 				ave_slope = new Vector3 ();
 				is_running = false;
 				drag_dynamic = control.drag; // get default phys material on body.
+				init_friction = collider.material.staticFriction;
+				init_player_scale = transform.localScale;
 		}
 
 		// calculate movement.
@@ -171,10 +176,7 @@ public class Player_physics_controller : MonoBehaviour
 				// move heading.
 				// xz move normalized.
 				base_forward_a = (input_z);
-				
-
 				base_strafe_a = (input_x);
-
 				Vector3 xz_a_norm = new Vector3 (base_strafe_a, 0, base_forward_a).normalized;
 				base_forward_a = xz_a_norm.z * MOVE_ACCEL;
 				base_strafe_a = xz_a_norm.x * MOVE_ACCEL;
@@ -200,7 +202,7 @@ public class Player_physics_controller : MonoBehaviour
 										// only do so if animating in a state. (does not inturrupt current animation).
 										if (true) {// !anim.IsInTransition (0)) {   
 												anim.SetBool (isJumping, true);
-												jump_a = JUMP_UPLIFT;
+												jump_a = JUMP_UPLIFT * PlayerVars.buffJump;
 										}
 								}
 						} else {
@@ -237,11 +239,11 @@ public class Player_physics_controller : MonoBehaviour
 				// speed restricter. Don't need vertical speed.
 				float set_forward_limiter = 1;
 				if (is_running) {
-						if (xz_v.sqrMagnitude > RUN_MAX_SPEED * RUN_MAX_SPEED) {
+						if (xz_v.sqrMagnitude > RUN_MAX_SPEED * RUN_MAX_SPEED * PlayerVars.buffSpeed) {
 								set_forward_limiter = 0.1f;
 						}
 				} else {
-						if (xz_v.sqrMagnitude > MOVE_MAX_SPEED * MOVE_MAX_SPEED) {
+						if (xz_v.sqrMagnitude > MOVE_MAX_SPEED * MOVE_MAX_SPEED * PlayerVars.buffSpeed) {
 								set_forward_limiter = 0.1f;
 						}
 				}
@@ -250,23 +252,25 @@ public class Player_physics_controller : MonoBehaviour
 
 
 				// Combine the forward control values and limiter.
-				Vector3 a_sum = (transform.forward * base_forward_a + transform.right * base_strafe_a) * v_boost * xz_a_limiter;
+				collider.material.staticFriction = init_friction / PlayerVars.buffSpeed;
+//				Debug.Log (collider.material.staticFriction + " " + xz_a_limiter);
+				Vector3 a_sum = (transform.forward * base_forward_a + transform.right * base_strafe_a) * v_boost * xz_a_limiter * PlayerVars.buffSpeed;
 
 				// when in air or high slope, then very little drive power.
 				if (!onGround || Vector3.Dot (footTracePoint.up, ave_slope.normalized) < SLOPE_SLIP_ANGLE) {
-						a_sum *= .1f;
+						a_sum *= NO_CONTACT_POWER_RATIO;
 				}
 
 				// resistance force so that player stops sliding where move force is zero.
-				Vector3 xz_break_heading = -(control.velocity.normalized - a_sum.normalized);
+				Vector3 xz_break_heading = -(control.velocity - a_sum.normalized);
 				xz_break_heading.y = 0;
 
 				// breaking force
 				control.AddForce (xz_break_heading * MOVE_ACCEL * BREAK_CONTROL, ForceMode.Acceleration);
 				// move force
-		control.AddForce (a_sum, ForceMode.Acceleration);
+				control.AddForce (a_sum, ForceMode.Acceleration);
 				// jump force
-				control.AddForce (transform.up * jump_a, ForceMode.Acceleration);
+				control.AddForce (transform.up * jump_a, ForceMode.VelocityChange);
 
 				// rotate body. Its breaks mouse input.
 				//Quaternion rot_y = Quaternion.AngleAxis (rotation_y, control.transform.up);
@@ -278,7 +282,6 @@ public class Player_physics_controller : MonoBehaviour
 				//float rot_y_look_force = Mathf.Pow (diffAngle * 1f, 3);
 				float rot_y_look_force = diffAngle * TURN_ACCEL;
 				control.AddTorque (0, rot_y_look_force, 0, ForceMode.Acceleration);
-				//Debug.Log (y_angle_body + " " + look_rotation + " " + rot_y_look_force);
 
 
 				// pitch cam and grab point. done in physics time. The Camera follows this.
@@ -302,14 +305,13 @@ public class Player_physics_controller : MonoBehaviour
 */
 
 				// effects
-				speedTrail.enabled = (a_sum.sqrMagnitude > 1);
+				speedTrail.enabled = (control.velocity.sqrMagnitude > (RUN_MAX_SPEED * RUN_MAX_SPEED)); // optimize this.
 		}
 
 
 		// used to cross the phyics frames to render frames.
 		void Update ()
 		{
-
 				// mouse look.
 				rotation_x = Input.GetAxis ("Mouse Y") * mouse_sensitivity;		// this does not affect collision.
 				rotation_y = Input.GetAxis ("Mouse X") * mouse_sensitivity;		// this case is special for applying physics.
@@ -328,7 +330,9 @@ public class Player_physics_controller : MonoBehaviour
 				headCamera.transform.rotation = Quaternion.LookRotation (Vector3.RotateTowards (headCamera.transform.forward,
 		                                                       camForwards,
 		                                                       ROTATION_MAX_SPEED * Time.deltaTime, .1f * Time.deltaTime), control.transform.up);
-
-
 		}
+
+	void LateUpdate(){
+		transform.localScale = init_player_scale * PlayerVars.buffScale;
+	}
 }
