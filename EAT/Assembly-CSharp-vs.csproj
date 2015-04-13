@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/utils/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/utils/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -184,34 +184,34 @@
      <None Include="Assets\RAIN\Editor\Shaders\NavMeshColliderShader.shader" />
      <None Include="Assets\AstarPathfindingProject\link.xml" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/charlie/Downloads/cmpt 330 - realtime game/github project eat/Eat/EAT/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="CloudsToy">
- <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/Environment/Volumetric Clouds/DLL/CloudsToy.dll</HintPath>
- </Reference>
- <Reference Include="NewSynapseLibrary0">
- <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/SynapseEditor/NewSynapseLibrary0.dll</HintPath>
- </Reference>
- <Reference Include="RAIN">
- <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/RAIN/RAIN.dll</HintPath>
- </Reference>
- <Reference Include="RAINMetaform">
- <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/RAIN/RAINMetaform.dll</HintPath>
- </Reference>
- <Reference Include="Synapse.Runtime">
- <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/Synapse/Synapse.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="SynapseDemo">
- <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/Synapse/Demo/SynapseDemo.dll</HintPath>
- </Reference>
- <Reference Include="Pathfinding.JsonFx">
- <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/AstarPathfindingProject/Plugins/JsonFx/Pathfinding.JsonFx.dll</HintPath>
+ <HintPath>C:/utils/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Pathfinding.Ionic.Zip.Reduced">
- <HintPath>C:/users/robert/My Documents/src/School/Games/Eat/EAT/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+ <HintPath>C:/Users/charlie/Downloads/cmpt 330 - realtime game/github project eat/Eat/EAT/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+ </Reference>
+ <Reference Include="Pathfinding.JsonFx">
+ <HintPath>C:/Users/charlie/Downloads/cmpt 330 - realtime game/github project eat/Eat/EAT/Assets/AstarPathfindingProject/Plugins/JsonFx/Pathfinding.JsonFx.dll</HintPath>
+ </Reference>
+ <Reference Include="CloudsToy">
+ <HintPath>C:/Users/charlie/Downloads/cmpt 330 - realtime game/github project eat/Eat/EAT/Assets/Environment/Volumetric Clouds/DLL/CloudsToy.dll</HintPath>
+ </Reference>
+ <Reference Include="RAIN">
+ <HintPath>C:/Users/charlie/Downloads/cmpt 330 - realtime game/github project eat/Eat/EAT/Assets/RAIN/RAIN.dll</HintPath>
+ </Reference>
+ <Reference Include="RAINMetaform">
+ <HintPath>C:/Users/charlie/Downloads/cmpt 330 - realtime game/github project eat/Eat/EAT/Assets/RAIN/RAINMetaform.dll</HintPath>
+ </Reference>
+ <Reference Include="Synapse.Runtime">
+ <HintPath>C:/Users/charlie/Downloads/cmpt 330 - realtime game/github project eat/Eat/EAT/Assets/Synapse/Synapse.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="SynapseDemo">
+ <HintPath>C:/Users/charlie/Downloads/cmpt 330 - realtime game/github project eat/Eat/EAT/Assets/Synapse/Demo/SynapseDemo.dll</HintPath>
+ </Reference>
+ <Reference Include="NewSynapseLibrary0">
+ <HintPath>C:/Users/charlie/Downloads/cmpt 330 - realtime game/github project eat/Eat/EAT/Assets/SynapseEditor/NewSynapseLibrary0.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
